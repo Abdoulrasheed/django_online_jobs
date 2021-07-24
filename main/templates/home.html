@@ -1,0 +1,118 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<section class="content">
+  <div class="parent">
+    <div class="main">
+      <h1 class="title">We are currently hiring the following roles</h1>
+      <div class="list">
+        <div class="list-job-icon"></div>
+        <div>
+          <div class="list-title">Sales and Management</div>
+          <div class="list-location">MAU - Yola</div>
+        </div>
+        <div>
+          <div class="list-date-posted">12-July, 2021</div>
+          <div class="list-type">Full time</div>
+        </div>
+        <button class="applyButton">Apply</button>
+      </div>
+
+      <div class="list">
+        <div class="list-job-icon"></div>
+        <div>
+          <div class="list-title">Sales and Management</div>
+          <div class="list-location">MAU - Yola</div>
+        </div>
+        <div>
+          <div class="list-date-posted">12-July, 2021</div>
+          <div class="list-type">Full time</div>
+        </div>
+        <button class="applyButton">Apply</button>
+      </div>
+
+      <div class="list">
+        <div class="list-job-icon"></div>
+        <div>
+          <div class="list-title">Sales and Management</div>
+          <div class="list-location">MAU - Yola</div>
+        </div>
+        <div>
+          <div class="list-date-posted">12-July, 2021</div>
+          <div class="list-type">Full time</div>
+        </div>
+        <button class="applyButton">Apply</button>
+      </div>
+
+      <div class="list">
+        <div class="list-job-icon"></div>
+        <div>
+          <div class="list-title">Sales and Management</div>
+          <div class="list-location">MAU - Yola</div>
+        </div>
+        <div>
+          <div class="list-date-posted">12-July, 2021</div>
+          <div class="list-type">Full time</div>
+        </div>
+        <button class="applyButton">Apply</button>
+      </div>
+
+      <div class="list">
+        <div class="list-job-icon"></div>
+        <div>
+          <div class="list-title">Sales and Management</div>
+          <div class="list-location">MAU - Yola</div>
+        </div>
+        <div>
+          <div class="list-date-posted">12-July, 2021</div>
+          <div class="list-type">Full time</div>
+        </div>
+        <button class="applyButton">Apply</button>
+      </div>
+
+      <div class="list">
+        <div class="list-job-icon"></div>
+        <div>
+          <div class="list-title">Sales and Management</div>
+          <div class="list-location">MAU - Yola</div>
+        </div>
+        <div>
+          <div class="list-date-posted">12-July, 2021</div>
+          <div class="list-type">Full time</div>
+        </div>
+        <button class="applyButton">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modalInActive flip-scale-down-diag-2">
+    <form method="post" id="form" action="{% url 'apply' %}">
+      {% csrf_token %}
+      <div class="modal-top">
+        <h4>Apply now</h4>
+        <span class="close-icon"></span>
+      </div>
+      {{ form }}
+      <button class="buttonSubmit" type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+{% endblock %} {% block script %}
+<script>
+  window.onload = () => {
+    const buttons = document.querySelectorAll(".applyButton");
+    const modal = document.querySelector(".modal");
+    const closeIcon = document.querySelector(".close-icon");
+
+    buttons.forEach((el) =>
+      el.addEventListener("click", () => {
+        modal.classList.remove("modalInActive");
+      })
+    );
+
+    closeIcon.addEventListener("click", () => {
+      modal.classList.add("modalInActive");
+    });
+  };
+</script>
+{% endblock %}
